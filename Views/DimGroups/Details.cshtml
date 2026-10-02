@@ -1,0 +1,5 @@
+@model DimGroup
+@{ ViewData["Title"] = "Detalhes do grupo"; }
+<p class="eyebrow">GRUPO</p><h1>@Model.Name</h1><p>@Model.Description</p><h2>Despesas (@Model.Expenses.Count)</h2>
+@if (Model.Expenses.Any()) { <div class="table-wrap"><table><thead><tr><th>Despesa</th><th>Data</th><th>Valor</th></tr></thead><tbody>@foreach(var e in Model.Expenses) { <tr><td>@e.Title</td><td>@e.ExpenseDate.ToString("dd/MM/yyyy")</td><td>R$ @e.Amount.ToString("N2")</td></tr> }</tbody></table></div> } else { <p class="empty">Este grupo ainda não tem despesas.</p> }
+<a class="button secondary" asp-action="Index">Voltar</a>

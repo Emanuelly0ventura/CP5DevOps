@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DimDim</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+<header class="topbar"><a class="brand" asp-controller="Home" asp-action="Index">Dim<span>Dim</span></a>
+<nav><a asp-controller="Home" asp-action="Index">Início</a><a asp-controller="DimGroups" asp-action="Index">Grupos</a><a asp-controller="Expenses" asp-action="Index">Despesas</a></nav></header>
+<main class="container">
+@if (TempData["Success"] is string message) { <div class="notice">@message</div> }
+@RenderBody()
+</main>
+<footer>Projeto acadêmico · Aplicações e Banco em Nuvem · DimDim</footer>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

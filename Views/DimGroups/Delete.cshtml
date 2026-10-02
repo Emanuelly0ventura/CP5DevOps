@@ -1,0 +1,3 @@
+@model DimGroup
+@{ ViewData["Title"] = "Excluir grupo"; }
+<h1>Excluir grupo</h1><div class="warning"><strong>Atenção:</strong> excluir “@Model.Name” também removerá @Model.Expenses.Count despesa(s) vinculada(s).</div><form asp-action="Delete"><input type="hidden" asp-for="Id" /><button class="button danger" type="submit">Confirmar exclusão</button> <a class="button secondary" asp-action="Index">Cancelar</a></form>

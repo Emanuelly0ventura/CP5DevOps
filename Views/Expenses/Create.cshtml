@@ -1,0 +1,4 @@
+@model Expense
+@{ ViewData["Title"] = "Nova despesa"; }
+<h1>Nova despesa</h1><p class="muted">Associe a despesa a um grupo existente.</p>
+@if (((Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.DimGroupId).Count() == 0) { <div class="warning">Cadastre um grupo antes de lançar uma despesa. <a asp-controller="DimGroups" asp-action="Create">Criar grupo</a>.</div> } else { <form asp-action="Create" class="form-card"><partial name="_Form" model="Model" /><button class="button" type="submit">Salvar despesa</button> <a class="button secondary" asp-action="Index">Cancelar</a></form> }

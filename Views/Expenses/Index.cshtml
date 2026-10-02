@@ -1,0 +1,4 @@
+@model IEnumerable<Expense>
+@{ ViewData["Title"] = "Despesas"; }
+<div class="section-heading"><div><p class="eyebrow">LANÇAMENTOS</p><h1>Despesas</h1></div><a class="button" asp-action="Create">+ Nova despesa</a></div>
+@if (Model.Any()) { <div class="table-wrap"><table><thead><tr><th>Despesa</th><th>Grupo</th><th>Categoria</th><th>Data</th><th>Valor</th><th>Ações</th></tr></thead><tbody>@foreach (var item in Model) { <tr><td><strong>@item.Title</strong></td><td>@item.DimGroup?.Name</td><td>@item.Category</td><td>@item.ExpenseDate.ToString("dd/MM/yyyy")</td><td>R$ @item.Amount.ToString("N2")</td><td class="actions"><a asp-action="Details" asp-route-id="@item.Id">Ver</a><a asp-action="Edit" asp-route-id="@item.Id">Editar</a><a class="danger-link" asp-action="Delete" asp-route-id="@item.Id">Excluir</a></td></tr> }</tbody></table></div> } else { <div class="empty">Nenhuma despesa cadastrada. <a asp-action="Create">Adicionar despesa</a></div> }

@@ -1,0 +1,3 @@
+@model DimGroup
+@{ ViewData["Title"] = "Novo grupo"; }
+<h1>Novo grupo</h1><p class="muted">Crie um grupo para organizar despesas compartilhadas.</p><form asp-action="Create" class="form-card"><partial name="_Form" model="Model" /><button class="button" type="submit">Salvar grupo</button> <a class="button secondary" asp-action="Index">Cancelar</a></form>

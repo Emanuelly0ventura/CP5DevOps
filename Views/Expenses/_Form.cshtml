@@ -1,0 +1,7 @@
+@model Expense
+<div asp-validation-summary="ModelOnly" class="validation"></div>
+<div class="field"><label asp-for="Title"></label><input asp-for="Title" /><span asp-validation-for="Title" class="validation"></span></div>
+<div class="field"><label asp-for="DimGroupId"></label><select asp-for="DimGroupId" asp-items="ViewBag.DimGroupId"><option value="">Selecione um grupo</option></select><span asp-validation-for="DimGroupId" class="validation"></span></div>
+<div class="field"><label asp-for="Amount"></label><input asp-for="Amount" type="number" step="0.01" min="0.01" /><span asp-validation-for="Amount" class="validation"></span></div>
+<div class="field"><label asp-for="ExpenseDate"></label><input asp-for="ExpenseDate" type="date" /><span asp-validation-for="ExpenseDate" class="validation"></span></div>
+<div class="field"><label asp-for="Category"></label><input asp-for="Category" /><span asp-validation-for="Category" class="validation"></span></div>

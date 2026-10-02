@@ -1,0 +1,4 @@
+@model IEnumerable<DimGroup>
+@{ ViewData["Title"] = "Grupos"; }
+<div class="section-heading"><div><p class="eyebrow">ORGANIZAÇÃO</p><h1>Grupos</h1></div><a class="button" asp-action="Create">+ Novo grupo</a></div>
+@if (Model.Any()) { <div class="table-wrap"><table><thead><tr><th>Nome</th><th>Descrição</th><th>Criado em</th><th>Ações</th></tr></thead><tbody>@foreach (var item in Model) { <tr><td><strong>@item.Name</strong></td><td>@item.Description</td><td>@item.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy")</td><td class="actions"><a asp-action="Details" asp-route-id="@item.Id">Ver</a><a asp-action="Edit" asp-route-id="@item.Id">Editar</a><a class="danger-link" asp-action="Delete" asp-route-id="@item.Id">Excluir</a></td></tr> }</tbody></table></div> } else { <div class="empty">Nenhum grupo cadastrado. <a asp-action="Create">Criar o primeiro</a></div> }

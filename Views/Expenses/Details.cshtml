@@ -1,0 +1,3 @@
+@model Expense
+@{ ViewData["Title"] = "Detalhes da despesa"; }
+<p class="eyebrow">DESPESA</p><h1>@Model.Title</h1><dl class="details"><dt>Grupo</dt><dd>@Model.DimGroup?.Name</dd><dt>Valor</dt><dd>R$ @Model.Amount.ToString("N2")</dd><dt>Data</dt><dd>@Model.ExpenseDate.ToString("dd/MM/yyyy")</dd><dt>Categoria</dt><dd>@Model.Category</dd></dl><a class="button secondary" asp-action="Index">Voltar</a>
